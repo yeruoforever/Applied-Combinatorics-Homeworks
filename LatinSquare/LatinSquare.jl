@@ -1,6 +1,6 @@
 function position(index, n)
-    index-=1
-    (index ÷ n + 1,index%n+1)
+    index -= 1
+    (index ÷ n + 1, index % n + 1)
 end
 
 function Candidates(index, n, rows, colums)
@@ -17,14 +17,14 @@ function can_be_set(x, index, n, rows, colums)
 end
 
 function verification(M::Matrix)
-    r=sum(M,dims=2)
-    c=sum(M,dims=1)
-    return sum(r'.==c)==size(M,1)
+    r = sum(M, dims = 2)
+    c = sum(M, dims = 1)
+    return sum(r' .== c) == size(M, 1)
 end
 
 function LatinSquare!(index, n, M::Matrix, rows, colums)
     if index > n * n
-        global counter+=1
+        global counter += 1
         # println(M)
     else
         for x ∈ Candidates(index, n, rows, colums)
@@ -51,10 +51,10 @@ end
 
 
 for i ∈ 1:5
-    @info "When the order of the Latin square is "*string(i)
-    global counter=BigInt(0)
+    @info "When the order of the Latin square is " * string(i)
+    global counter = BigInt(0)
     CountingLatinSquare(i)
-    println("The number is ",counter)
+    println("The number is ", counter)
 end
 
 # when LatinSquare is 1*1 ,the number of combination is 1
