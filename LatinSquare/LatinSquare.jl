@@ -19,7 +19,7 @@ end
 function LatinSquare!(index, n, M::Matrix, rows, colums)
     if index > n * n
         global counter += 1
-        println(M)
+        # println(M)
     else
         for x ∈ Candidates(index, n, rows, colums)
             if can_be_set(x, index, n, rows, colums)
@@ -47,7 +47,7 @@ end
 for i ∈ 1:5
     @info "When the order of the Latin square is " * string(i)
     global counter = BigInt(0)
-    CountingLatinSquare(i)
+    @time CountingLatinSquare(i)
     println("The number is ", counter)
 end
 
