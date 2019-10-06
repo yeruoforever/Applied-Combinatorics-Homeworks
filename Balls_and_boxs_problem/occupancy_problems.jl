@@ -17,13 +17,32 @@ function c(n::T, k::T) where T<:Integer
     convert(T, x)
 end
 
+'''
+r-combination of an n-set (sampling without replacement).
+'''
 C(n,r)=c(BigInt(n),BigInt(r))
+
+'''
+r-permutation of the n-set (sampling without replacement).
+'''
 P(n)=factorial(BigInt(n))
 
+'''
+r-combination of an n-set (sampling with replacement).
+'''
 Cᴿ(n,r)=C(n+r-1,r)
+
+
+'''
+r-permutation of an n-set (sampling with replacement).
+'''
 Pᴿ(n,r)=BigInt(n)^r
 
 
+
+'''
+Stirling number of the secend kind.
+'''
 function S₂(n::T,r::T) where T<:Integer
     s=zero(BigInt)
     for i ∈ 0:n
