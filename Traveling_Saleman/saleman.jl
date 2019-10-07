@@ -5,7 +5,7 @@ function saleman(n)
         for i = 1:n
             for j = 1:i-1
                 dis = points[i] - points[j]
-                distances[j, i] = distances[i, j] = dis' * dis
+                distances[j, i] = distances[i, j] = sqrt(dis' * dis) 
             end
         end
         distances, points
