@@ -67,15 +67,17 @@ end
 
 function subset(S,r)
     n=length(S)
+    s=sort(S)
     if r==0
         return []
     elseif n==r
-        return S
+        return s
     else
         bitmaps=Gray(n,r)
-        return map(x->S[x],bitmaps)
+        return map(x->s[x],bitmaps)
     end
 end
+
 
 function main()
     A = [1, 2, 3, 4,5,6,7,8]
@@ -86,7 +88,7 @@ function main()
         # println(A)
     end
     @show factorial(8) == i
-    
+
     S=[1,2,3,4,5,6,7,8]
     ss=subset(S,3)
     for each in ss
