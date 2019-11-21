@@ -15,9 +15,9 @@ function is_connected_graph(graph::BitMatrix,is_strongly_connected=false)
     end
     #有向图中，任意的两个不同节点nᵢ、nⱼ，若nᵢ到nⱼ可达，或者nⱼ到nᵢ可达，那么这张图是连通的。
     if is_strongly_connected
-        # 若判断强连通图
+        # 若判断强连通图(nᵢ到nⱼ可达、nⱼ到nᵢ也可达)
         g=g+g'
+        g=g.>0
     end
-    g=g.>0
     return all(g)
 end
