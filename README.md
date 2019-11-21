@@ -7,3 +7,4 @@ This is my Homeworks.
 * Traveling salesman problem
 * The pigeon hole principle
 * The Permutations and Subset
+* Determine whether it is a connected graph
